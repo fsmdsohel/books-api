@@ -1,3 +1,18 @@
+.background {
+  background-image: url(./images/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
 .custom-spinner {
   position: fixed;
   top: 50%;
@@ -36,13 +51,22 @@
 
 .header_title {
   text-align: center;
+  background: #00b7ff;
+  color: #ffffff;
+  padding: 7px 15px;
+  transform: skewX(10deg);
+}
+.website_name {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
 }
 
 .input_group {
-  width: 350px;
-  height: 40px;
+  width: 400px;
+  height: 50px;
   background-color: rgb(0, 183, 255);
-  border-radius: 20px;
+  border-radius: 25px;
   display: flex;
   justify-content: space-between;
 }
@@ -53,6 +77,9 @@
   background: transparent;
   padding: 0 15px;
   flex: 70%;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
 }
 .input_field::placeholder {
   color: #ffffffa8;
@@ -61,7 +88,7 @@
 .search_btn {
   /* border: none; */
   border-color: rgb(35, 134, 226);
-  border-radius: 20px;
+  border-radius: 25px;
   flex: 30%;
 }
 .input_box {
@@ -75,5 +102,8 @@
   overflow: hidden;
 }
 
-.card-title {
+@media (max-width: 600px) {
+  #books-numbers h5 {
+    font-size: 16px;
+  }
 }

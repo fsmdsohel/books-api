@@ -35,9 +35,9 @@ const loadImage = (imgId) => {
 };
 
 const showBooks = (books) => {
-  if (books.length === 0) {
+  if (books.docs.length === 0) {
     document.getElementById("spinner").style.display = "none";
-    document.getElementById("books-numbers").innerText = `No result found`;
+    document.getElementById("error-msg").innerText = `No result found`;
     return;
   }
 
@@ -51,35 +51,34 @@ const showBooks = (books) => {
     "total-display"
   ).innerText = `Maximum 100 books display`;
 
-  paginition(books, 0, 10);
-  const pagesCount = [books.docs.length / 10];
-};
-
-const paginition = (books, startVal, endVal) => {
-  let count = startVal;
-
   books.docs.forEach((book) => {
-    if (count < endVal) {
-      count++;
-      const image = loadImage(book.cover_i);
-      const div = document.createElement("div");
-      div.classList.add("col");
-      div.innerHTML = `
-                   <div class="card h-100 shadow">
-                        <img src="${image}" class="card-img-top" style="height: 400px" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Book Name: ${book.title}</h5>
-                            <p class="card-text"><strong>Author Name: </strong>${book.author_name}</p>
-                            <p class="card-text"><strong>publisher:</strong> ${book.publisher}</p>
-                            <p class="card-text"><strong>Publish Year:</strong> ${book.first_publish_year}</p>
+    const image = loadImage(book.cover_i);
+    const div = document.createElement("div");
+    div.classList.add("col");
+    div.innerHTML = `
+                 <div class="card h-100 shadow d-flex flex-row">
+                        <img src="${image}" class="card-img-top w-50" style="height: 400px" alt="">
+                        <div class="card-body w-50">
+                            <h4 class="card-title text-center m-0 p-0 text-capitalize"> ${
+                              book.title
+                            }</h4>
+                            <hr>
+                            <p class="card-text fs-5"><strong>Author Name: </strong>${
+                              book.author_name?.[0]
+                                ? book.author_name
+                                : "Not found"
+                            }</p>
+                            <p class="card-text fs-5"><strong>publisher:</strong> ${
+                              book.publisher?.[0] ? book.publisher : "Not found"
+                            }</p>
+                            <p class="card-text fs-5"><strong>Publish Year:</strong> ${
+                              book.first_publish_year
+                            }</p>
                         </div>
                     </div>
         `;
-      cardParent.appendChild(div);
-      document.getElementById("spinner").style.display = "none";
-    } else {
-      return;
-    }
+    cardParent.appendChild(div);
+    document.getElementById("spinner").style.display = "none";
   });
 };
 
