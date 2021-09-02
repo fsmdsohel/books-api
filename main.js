@@ -3,6 +3,7 @@ const searchBtn = document.getElementById("button-search");
 const cardParent = document.getElementById("book-card");
 const error = document.getElementById("error-msg");
 
+// fetch data
 searchBtn.addEventListener("click", () => {
   document.getElementById("book-count").style.display = "none";
   cardParent.textContent = "";
@@ -14,7 +15,6 @@ searchBtn.addEventListener("click", () => {
     error.appendChild(pTag);
     return;
   }
-  //   Clear;
 
   document.getElementById("spinner").style.display = "flex";
 
@@ -26,6 +26,7 @@ searchBtn.addEventListener("click", () => {
   searchField.value = "";
 });
 
+// load image
 const loadImage = (imgId) => {
   let imgUrl = "./images/img-not-found.png";
   if (typeof imgId !== "undefined") {
@@ -34,6 +35,7 @@ const loadImage = (imgId) => {
   return imgUrl;
 };
 
+// display books
 const showBooks = (books) => {
   if (books.docs.length === 0) {
     document.getElementById("spinner").style.display = "none";
@@ -41,9 +43,10 @@ const showBooks = (books) => {
     return;
   }
 
-  // books count
+  // show book count
   document.getElementById("book-count").style.display = "block";
   const bookList = books.numFound;
+
   document.getElementById(
     "total-found"
   ).innerText = `Total Books Found ${bookList}`;
@@ -81,10 +84,3 @@ const showBooks = (books) => {
     document.getElementById("spinner").style.display = "none";
   });
 };
-
-/*
-You11:37 PM
-https://covers.openlibrary.org/b/id/884293-M.jpg
-You11:57 PM
-https://covers.openlibrary.org/b/id/8631303-L.jpg
-*/
