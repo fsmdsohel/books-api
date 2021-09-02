@@ -1,0 +1,70 @@
+.custom-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-spinner > div {
+  width: 4rem;
+  height: 4rem;
+}
+
+.custom-spinner > span {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+.book-count {
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99;
+}
+
+#book-count {
+  display: none;
+}
+
+.header_title {
+  text-align: center;
+}
+
+.input_group {
+  width: 350px;
+  height: 40px;
+  background-color: rgb(0, 183, 255);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input_field {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 15px;
+  flex: 70%;
+}
+.input_field::placeholder {
+  color: #ffffffa8;
+}
+
+.search_btn {
+  /* border: none; */
+  border-color: rgb(35, 134, 226);
+  border-radius: 20px;
+  flex: 30%;
+}
+.input_box {
+  display: flex;
+  justify-content: center;
+}
