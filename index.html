@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-gray">
+<body oncontextmenu="return false;" class="bg-gray">
 
     <section class="background">
 
@@ -26,8 +26,9 @@
             <!-- Team search area -->
             <div class="input_box">
                 <div class="input_group">
-                    <input id="search-field" type="text" class="input_field" placeholder="Search books name:"
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input id="search-field" value="horor" type="text" class="input_field"
+                        placeholder="Search books name:" aria-label="Recipient's username"
+                        aria-describedby="button-addon2">
                     <button onclick="" class="search_btn" type="button" id="button-search">Search</button>
                 </div>
             </div>
@@ -35,7 +36,7 @@
             </h5>
         </div>
         <!-- books count -->
-        <div id="book-count" class="book-count bg-primary">
+        <div id="book-count" class="book-count bg">
             <div class="container text-white d-flex justify-content-between text-center py-3 my-4" id="books-numbers">
                 <h4 id="total-display">Maximum 100 books display</h5>
                     <h4 id="total-found">Total books found 3015</h4>
@@ -51,7 +52,12 @@
             <!-- display books -->
             <div class="row row-cols-1 row-cols-md-2 g-4" id="book-card">
             </div>
+            <div class="d-flex justify-content-center my-4">
+                <nav id="pagination" aria-label="...">
+                </nav>
+            </div>
         </div>
+
     </section>
 
 

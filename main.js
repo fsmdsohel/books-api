@@ -54,6 +54,8 @@ const showBooks = (books) => {
     "total-display"
   ).innerText = `Maximum 100 books display`;
 
+  const pagesCount = Math.ceil(books.docs.length / 20);
+
   books.docs.forEach((book) => {
     const image = loadImage(book.cover_i);
     const div = document.createElement("div");
@@ -75,7 +77,9 @@ const showBooks = (books) => {
                               book.publisher?.[0] ? book.publisher : "Not found"
                             }</p>
                             <p class="card-text fs-5"><strong>Publish Year:</strong> ${
-                              book.first_publish_year
+                              book.first_publish_year?.[0]
+                                ? book.first_publish_year
+                                : "Not found"
                             }</p>
                         </div>
                     </div>

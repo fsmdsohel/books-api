@@ -51,7 +51,7 @@
 
 .header_title {
   text-align: center;
-  background: #00b7ff;
+  background: #f61a7a;
   color: #ffffff;
   padding: 7px 15px;
   transform: skewX(10deg);
@@ -65,9 +65,10 @@
 .input_group {
   width: 400px;
   height: 50px;
-  background-color: rgb(0, 183, 255);
+  background-color: rgb(255 214 14);
   border-radius: 25px;
   display: flex;
+  box-shadow: 0px 0px 10px #b8b8b8;
   justify-content: space-between;
 }
 
@@ -78,7 +79,7 @@
   padding: 0 15px;
   flex: 70%;
   font-size: 18px;
-  color: #fff;
+  color: #000;
   font-weight: 600;
 }
 .input_field::placeholder {
@@ -87,9 +88,10 @@
 
 .search_btn {
   /* border: none; */
-  border-color: rgb(35, 134, 226);
+  border-color: rgb(246 26 122);
   border-radius: 25px;
   flex: 30%;
+  font-size: 18px;
 }
 .input_box {
   display: flex;
@@ -101,7 +103,9 @@
   border: none;
   overflow: hidden;
 }
-
+.bg {
+  background: #f61a7a;
+}
 @media (max-width: 600px) {
   #books-numbers h5 {
     font-size: 16px;
